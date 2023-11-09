@@ -16,9 +16,9 @@ class FieldController extends Controller
         $fieldtypes = Fieldtype::select('id', 'name')->get();
         $timetables = Timetable::select('id', 'name')->get();
 
-        $title = 'Delete Data!';
-        $text = "Yakin menghapus data lapangan?";
-        confirmDelete($title, $text);
+        // $title = 'Delete Data!';
+        // $text = "Yakin menghapus data lapangan?";
+        // confirmDelete($title, $text);
 
         return view('partner.fields.field', [  'fields' => $fields ,
                                         'fieldtypes' => $fieldtypes,
@@ -48,9 +48,9 @@ class FieldController extends Controller
         $field= Field::create($request->all());
         $field->timetables()->sync($this->mapTimetables($request['timetables']));
 
-        Alert::toast('Data lapangan berhasil ditambah!', 'success');
+        // Alert::toast('Data lapangan berhasil ditambah!', 'success');
 
-        return redirect()->back();
+        return redirect()->back()->with('error', 'Data lapangan berhasil ditambah');
     }
 
     public function edit(Request $request, $slug) 
@@ -76,20 +76,20 @@ class FieldController extends Controller
         $field->update($request->all());
         $field->timetables()->sync($this->mapTimetables($request['timetables']));
 
-        Alert::toast('Data lapangan telah diperbarui', 'success');
+        // Alert::toast('Data lapangan telah diperbarui', 'success');
 
-        return redirect()->route('field.index');
+        return redirect()->route('field.index')->with('error', 'Data lapangan telah diperbarui');
     }
 
     public function destroy(Field $id)
     {
         $id->delete();
-        alert()->success('Hore!','Field Deleted Successfully');
-        Alert::toast('Data lapangan telah dihapus', 'success');
+        // alert()->success('Hore!','Field Deleted Successfully');
+        // Alert::toast('Data lapangan telah dihapus', 'success');
 
         // Alert::toast('Data lapangan telah dihapus!', 'success');
 
-        return redirect()->route('fields.index');
+        return redirect()->route('fields.index')->with('error', 'Data lapangan telah dihapus');
     }
 
     private function mapTimetables($timetables)
