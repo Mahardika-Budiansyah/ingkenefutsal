@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FieldController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProfileController;
 

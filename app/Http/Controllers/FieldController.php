@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Field;
+use App\Models\Fieldtype;
+use App\Models\Timetable;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreFieldRequest;
+use App\Http\Requests\UpdateFieldRequest;
 
 class FieldController extends Controller
 {
@@ -15,7 +20,7 @@ class FieldController extends Controller
         $text = "Yakin menghapus data lapangan?";
         confirmDelete($title, $text);
 
-        return view('partner.fields.fields', [  'fields' => $fields ,
+        return view('partner.fields.field', [  'fields' => $fields ,
                                         'fieldtypes' => $fieldtypes,
                                         'timetables' => $timetables]);
     }
