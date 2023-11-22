@@ -16,7 +16,7 @@
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <link href="../build/assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
+    <link href="../../build/assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
     @vite('resources/css/app.css')
 </head>
 
@@ -24,18 +24,18 @@
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
 
     <!-- Sidenav Start -->
-    @include('partner.layouts.partials.sidenav')
+    @includeIf('partner.layouts.partials.sidenav')
     <!-- Sidenav End -->
     <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
         <!-- Navbar -->
-        @include('partner.layouts.partials.navbar')
+        @includeIf('partner.layouts.partials.navbar')
         <!-- End Navbar -->
 
         <div class="w-full px-6 py-6 mx-auto">
             @yield('content')
 
             <!-- Footer -->
-            @include('partner.layouts.partials.footer')
+            @includeIf('partner.layouts.partials.footer')
             <!-- End Footer -->
         </div>
     </main>

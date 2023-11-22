@@ -24,8 +24,8 @@ class UpdateFieldRequest extends FormRequest
         return [
             'name' => 'string|required',
             'fieldtype_id' => 'required',
-            'timetables.*' => 'string',
-            'timetables' => 'required|array',
+            // 'timetables.*' => 'string',
+            // 'timetables' => 'required|array',
         ];
     }
 }

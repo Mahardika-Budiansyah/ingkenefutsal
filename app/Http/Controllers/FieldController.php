@@ -50,7 +50,7 @@ class FieldController extends Controller
 
         // Alert::toast('Data lapangan berhasil ditambah!', 'success');
 
-        return redirect()->back()->with('error', 'Data lapangan berhasil ditambah');
+        return redirect()->route('field.index')->with('error', 'Data lapangan berhasil ditambah');
     }
 
     public function edit(Request $request, $slug) 
@@ -89,7 +89,7 @@ class FieldController extends Controller
 
         // Alert::toast('Data lapangan telah dihapus!', 'success');
 
-        return redirect()->route('fields.index')->with('error', 'Data lapangan telah dihapus');
+        return redirect()->route('field.index')->with('error', 'Data lapangan telah dihapus');
     }
 
     private function mapTimetables($timetables)

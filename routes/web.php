@@ -50,16 +50,23 @@ Route::prefix('partner')->group(function() {
     Route::get('/register', [PartnerController::class, 'register'])->name('partner.register');
     Route::post('/register/store', [PartnerController::class, 'store'])->name('partner.register.store');
 
-    Route::controller(FieldController::class)->group(function () {	
-        Route::get('/field', 'index')->name('field.index');
-        Route::post('/field_create', 'store')->name('store_field.store');
-        Route::get('/detail/{id}', 'show')->name('detail_field.show');
-        Route::get('/edit/{id}', 'edit')->name('edit_field.edit');
-        Route::put('/update/{id}', 'update')->name('field_update.update');
-        Route::delete('/destroy/{id}','destroy')->name('field_destroy.destroy');
-        
+    Route::middleware(['partner'])->group(function() {
+        Route::controller(FieldController::class)->group(function () {	
+            Route::get('/field', 'index')->name('field.index');
+            Route::post('/field/store', 'store')->name('field.store');
+            Route::get('/detail/{id}', 'show')->name('field.show');
+            Route::get('/edit/{id}', 'edit')->name('field.edit');
+            Route::put('/update/{id}', 'update')->name('field.update');
+            Route::delete('/destroy/{id}','destroy')->name('field.destroy'); 
+        });
     });
+    
+    
 });
+
+
+
+
 
 
 
