@@ -11,12 +11,12 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
-    <link href="../build/assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../build/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="../../build/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../build/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
-    <link href="../build/assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
+    <link href="../../build/assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
     @vite('resources/css/app.css')
 </head>
 
@@ -42,9 +42,9 @@
 
 
     <!-- plugin for charts  -->
-    <script src="../build/assets/js/plugins/chartjs.min.js" async></script>
+    <script src="../../build/assets/js/plugins/chartjs.min.js" async></script>
     <!-- plugin for scrollbar  -->
-    <script src="../build/assets/js/plugins/perfect-scrollbar.min.js" async></script>
+    <script src="../../build/assets/js/plugins/perfect-scrollbar.min.js" async></script>
     <!-- main script file  -->
     <script src="../build/assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
