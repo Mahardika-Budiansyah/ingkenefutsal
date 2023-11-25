@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Partner;
 use App\Models\Fieldtype;
 use App\Models\Timetable;
 use Illuminate\Database\Eloquent\Model;
@@ -21,6 +22,7 @@ class Field extends Model
         'description',
         'image',
         'slug',
+        'partner_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -45,5 +47,10 @@ class Field extends Model
     public function timetables()
     {
         return $this->belongsToMany(Timetable::class, 'field_timetable', 'field_id', 'timetable_id')->withPivot('price')->withTimestamps();
+    }
+
+    public function partners()
+    {
+        return $this->belongsTo(Partner::class, 'partner_id', 'id');
     }
 }

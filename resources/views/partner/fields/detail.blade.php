@@ -1,4 +1,4 @@
-@extends('partner.layouts.mainlayouts')
+@extends('partner.layouts.mainlayouts', ['activePage' => $activePage])
 
 @section('title', 'Detail Field')
 
@@ -9,7 +9,7 @@
             <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
                 <div class="flex flex-wrap justify-between">
                     <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                        <p class="uppercase font-bold dark:text-white">{{ $field->name }}</p>
+                        <p class="uppercase font-semibold dark:text-white">Data {{ $field->name }}</p>
                     </div>
                 </div>
                 <div class="px-6 py-4">

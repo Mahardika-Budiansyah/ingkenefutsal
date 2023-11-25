@@ -13,27 +13,26 @@
     <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
     <ul class="flex flex-col pl-0 mb-0">
         <li class="mt-0.5 w-full">
-            <a class="{{ Request::is('partner.dashboard') ? 'bg-blue-500/13 font-semibold text-slate-700 rounded-lg' : '' }} py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="{{ route('partner.dashboard') }}">
+            <a href="{{ route('partner.dashboard') }}" class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors {{ $activePage === 'dashboard' ? 'bg-blue-500/13 font-semibold text-slate-700 rounded-lg' : '' }}">
                 <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <i class="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i>
+                    <i class="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i>
                 </div>
                 <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Dashboard</span>
             </a>
-            {{ Request::is('partner.dashboard') ? 'Active' : 'Not Active' }}
         </li>
 
         <li class="mt-0.5 w-full">
-            <a class="{{ Request::is('field.index') ? 'bg-blue-500/13 font-semibold text-slate-700 rounded-lg' : '' }} py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="{{ route('field.index') }}">
+            <a href="{{ route('field.index') }}" class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors {{ $activePage === 'field' ? 'bg-blue-500/13 font-semibold text-slate-700 rounded-lg' : '' }}">
                 <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
+                <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-collection"></i>
                 </div>
                 <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Field</span>
             </a>
-            {{ Request::is('field.index') ? 'Active' : 'Not Active' }}
+            
         </li>
 
         <li class="mt-0.5 w-full">
-        <a class="bg-blue-500/13 font-semibold text-slate-700 rounded-lg py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/billing.html">
+        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/billing.html">
             <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
             <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
             </div>
@@ -46,29 +45,11 @@
         </li>
 
         <li class="mt-0.5 w-full">
-        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/profile.html">
+            <a href="{{ route('partner.edit') }}" class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors {{ $activePage === 'profile' ? 'bg-blue-500/13 font-semibold text-slate-700 rounded-lg' : '' }}">
             <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
             <i class="relative top-0 text-sm leading-normal text-slate-700 ni ni-single-02"></i>
             </div>
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Profile</span>
-        </a>
-        </li>
-
-        <li class="mt-0.5 w-full">
-        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/sign-in.html">
-            <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-            <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-single-copy-04"></i>
-            </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign In</span>
-        </a>
-        </li>
-
-        <li class="mt-0.5 w-full">
-        <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="../pages/sign-up.html">
-            <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-            <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-collection"></i>
-            </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign Up</span>
         </a>
         </li>
     </ul>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Partner;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateFieldRequest extends FormRequest
+class PartnerProfileUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +24,9 @@ class UpdateFieldRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'string|required',
-            'fieldtype_id' => 'required',
-            'timetables.*' => 'string',
-            'timetables' => 'required|array',
+            'name' => ['required', 'string', 'max:255'],
+            // 'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(Partner::class)->ignore($this->user()->id)],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(Partner::class)->ignore(optional(auth()->user())->id)],
         ];
     }
 }

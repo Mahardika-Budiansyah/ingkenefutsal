@@ -10,12 +10,14 @@ use Illuminate\Support\Facades\Hash;
 
 class PartnerController extends Controller
 {
+    protected $activePage = 'dashboard';
+
     public function index() {
         return view('/auth.partner.sign-in');
     }
 
     public function dashboard() {
-        return view('/partner.dashboard');
+        return view('/partner.dashboard', ['activePage' => $this->activePage]);
     }
 
     public function login(Request $request) {
@@ -48,4 +50,5 @@ class PartnerController extends Controller
 
         return redirect()->route('partner.login_from')->with('error', 'Partner Created Successfully');
     }
+
 }
