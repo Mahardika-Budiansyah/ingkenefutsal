@@ -26,9 +26,9 @@
     @include('layouts.partials.navbar')
 
     @if(request()->is('/'))
-        @includeIf('layouts.partials.jumbotron')
+        @includeIf('layouts.partials.jumbotronHomepage')
     @else
-        @includeIf('layouts.partials.breadcrumb')
+        @includeIf('layouts.partials.jumbotronDashboard')
     @endif
 
     @yield('content')

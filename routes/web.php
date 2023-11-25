@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FieldController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\PartnerProfileController;
 
 /*
@@ -75,6 +76,10 @@ Route::controller(VenueController::class)->group(function() {
     Route::get('/edit/{id}', 'edit')->name('venue.edit');
     Route::put('/venue', 'index')->name('venue.index');
     Route::delete('/destroy/{id}', 'destroy')->name('venue.destroy');
+});
+
+Route:controller(TransactionController::class)->group(function() {
+    Route::get('/transaction', 'index')->name('transaction.index');
 });
 
 
