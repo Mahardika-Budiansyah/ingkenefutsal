@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('image', 255)->nullable();
             $table->string('slug', 100)->nullable();
+            $table->unsignedBigInteger('partner_id');
+            $table->foreign('partner_id')->references('id')->on('partners')->onDelete('restrict');
             $table->softDeletes();
             $table->timestamps();
         });

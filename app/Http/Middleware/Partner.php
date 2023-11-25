@@ -18,7 +18,7 @@ class Partner
     public function handle(Request $request, Closure $next): Response
     {
         if(!Auth::guard('partner')->check()) {
-            return redirect()->route('login_from')->with('error', 'Please, Login First!');
+            return redirect()->route('partner.login_from')->with('error', 'Please, Login First!');
         }
         
         return $next($request);

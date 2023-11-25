@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FieldController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PartnerProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +18,15 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
-// Route::get('/dashboard', function() {
-//     return view('partner/dashboard');
-// });
 
-Route::get('/billing', function() {
-    return view('partner/billing');
-});
+Route::get('/', function() {
+    return view('homepage');
+})->name('homepage');
 
-Route::get('/tables', function() {
-    return view('partner/tables');
-});
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', [AdminController::class, 'index'])->name('admin.login_from');
@@ -44,21 +40,49 @@ Route::prefix('admin')->group(function() {
 Route::prefix('partner')->group(function() {
     Route::get('/login', [PartnerController::class, 'index'])->name('partner.login_from');
     Route::post('/login/owner', [PartnerController::class, 'login'])->name('partner.login');
-    Route::get('/dashboard', [PartnerController::class, 'dashboard'])->name('partner.dashboard')->middleware('partner');
-    Route::get('/logout', [PartnerController::class, 'logout'])->name('partner.logout')->middleware('partner');
     Route::get('/register', [PartnerController::class, 'register'])->name('partner.register');
     Route::post('/register/store', [PartnerController::class, 'store'])->name('partner.register.store');
+    
 
-    Route::controller(FieldController::class)->group(function () {	
-        Route::get('/field', 'index')->name('field.index');
-        Route::post('/field_create', 'store')->name('store_field.store');
-        Route::get('/detail/{id}', 'show')->name('detail_field.show');
-        Route::get('/edit/{id}', 'edit')->name('edit_field.edit');
-        Route::put('/update/{id}', 'update')->name('field_update.update');
-        Route::delete('/destroy/{id}','destroy')->name('field_destroy.destroy');
-        
+    Route::middleware(['partner'])->group(function() {
+        Route::controller(PartnerController::class)->group(function() {
+            Route::get('/dashboard', 'dashboard')->name('partner.dashboard');
+            Route::get('/logout', 'logout')->name('partner.logout');
+        });
+
+        Route::controller(PartnerProfileController::class)->group(function() {
+            Route::get('/edit', 'edit')->name('partner.edit');
+            Route::patch('/edit/update', 'update')->name('partner.update');
+        });
+
+        Route::controller(FieldController::class)->group(function() {	
+            Route::get('/field', 'index')->name('field.index');
+            Route::get('/create', 'create')->name('field.create');
+            Route::post('/field/store', 'store')->name('field.store');
+            Route::get('/detail/{id}', 'show')->name('field.show');
+            Route::get('/edit/{id}', 'edit')->name('field.edit');
+            Route::put('/update/{id}', 'update')->name('field.update');
+            Route::delete('/destroy/{id}','destroy')->name('field.destroy'); 
+        });
     });
 });
+
+Route::controller(VenueController::class)->group(function() {
+    Route::get('/venue', 'index')->name('venue.index');
+    Route::get('/create', 'create')->name('venue.create');
+    Route::post('/venue/store', 'store')->name('venue.store');
+    Route::get('/detail/{id}', 'show')->name('venue.show');
+    Route::get('/edit/{id}', 'edit')->name('venue.edit');
+    Route::put('/venue', 'index')->name('venue.index');
+    Route::delete('/destroy/{id}', 'destroy')->name('venue.destroy');
+});
+
+
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Field;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -59,4 +60,9 @@ class Partner extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function fields()
+    {
+        return $this->hasMany(Field::class, 'partner_id','id');
+    }
 }
