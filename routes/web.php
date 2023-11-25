@@ -68,18 +68,18 @@ Route::prefix('partner')->group(function() {
     });
 });
 
-Route::controller(VenueController::class)->group(function() {
-    Route::get('/venue', 'index')->name('venue.index');
-    Route::get('/create', 'create')->name('venue.create');
-    Route::post('/venue/store', 'store')->name('venue.store');
-    Route::get('/detail/{id}', 'show')->name('venue.show');
-    Route::get('/edit/{id}', 'edit')->name('venue.edit');
-    Route::put('/venue', 'index')->name('venue.index');
-    Route::delete('/destroy/{id}', 'destroy')->name('venue.destroy');
-});
+// Route::controller(VenueController::class)->group(function() {
+//     Route::get('/venue', 'index')->name('venue.index');
+//     Route::get('/create', 'create')->name('venue.create');
+//     Route::post('/venue/store', 'store')->name('venue.store');
+//     Route::get('/detail/{id}', 'show')->name('venue.show');
+//     Route::get('/edit/{id}', 'edit')->name('venue.edit');
+//     Route::put('/venue', 'index')->name('venue.index');
+//     Route::delete('/destroy/{id}', 'destroy')->name('venue.destroy');
+// });
 
-Route:controller(TransactionController::class)->group(function() {
-    Route::get('/transaction', 'index')->name('transaction.index');
+Route::controller(TransactionController::class)->group(function() {
+    Route::get('/transaction', 'index');
 });
 
 
