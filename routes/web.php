@@ -27,6 +27,13 @@ Route::get('/', function() {
     return view('homepage');
 })->name('homepage');
 
+Route::get('/user/dashboard', function() {
+    return view('user.dashboard');
+})->name('user.dashboard');
+
+Route::get('/user/field', [FieldController::class, 'userIndex'])->name('user.field');
+
+
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', [AdminController::class, 'index'])->name('admin.login_from');

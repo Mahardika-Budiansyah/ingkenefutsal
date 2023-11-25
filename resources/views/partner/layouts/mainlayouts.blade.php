@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,14 +18,17 @@
     {{-- <script src="https://unpkg.com/@popperjs/core@2"></script> --}}
     <!-- Main Styling -->
     <link href="../../build/assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
-    @vite('resources/css/app.css')
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
-<body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
+<body
+    class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
     <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
 
     <!-- Sidenav Start -->
-    @includeIf('partner.layouts.partials.sidenav',  ['activePage' => $activePage ?? null])
+    @includeIf('partner.layouts.partials.sidenav', ['activePage' => $activePage ?? null])
     <!-- Sidenav End -->
     <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
         <!-- Navbar -->
@@ -46,14 +50,13 @@
     <!-- plugin for scrollbar  -->
     <script src="../../build/assets/js/plugins/perfect-scrollbar.min.js" async></script>
     <!-- main script file  -->
-    <script src="../../build/assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
-    
+    <script src="../../build/assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
+    <script src="../../../../node_modules/flowbite/dist/flowbite.min.js"></script>
+
     <script>
-        $('document').ready(function () {
-            $('.timetable-enable').on('click', function () {
+        $('document').ready(function() {
+            $('.timetable-enable').on('click', function() {
                 let id = $(this).attr('data-id')
                 let enabled = $(this).is(":checked")
                 $('.timetable-price[data-id="' + id + '"]').attr('disabled', !enabled)
@@ -155,6 +158,7 @@
         Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
     </script> --}}
-    
+
 </body>
+
 </html>
