@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FieldController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\PartnerProfileController;
 
@@ -27,6 +28,18 @@ use App\Http\Controllers\PartnerProfileController;
 Route::get('/', function() {
     return view('homepage');
 })->name('homepage');
+
+Route::get('/user/dashboard', function() {
+    return view('user.dashboard');
+})->name('user.dashboard');
+
+Route::get('/user/field', [FieldController::class, 'userIndex'])->name('user.field');
+Route::get('/user/detail', [FieldController::class, 'userShow'])->name('user.show');
+Route::get('/user/review-order', [TransactionController::class, 'userOrder'])->name('user.order');
+Route::get('/user/payment', [TransactionController::class, 'userPayment'])->name('user.payment');
+Route::post('/user/upload-payment', [TransactionController::class, 'userUpload'])->name('user.upload');
+Route::get('/user/order-completed', [TransactionController::class, 'userCompleted'])->name('user.completed');
+
 
 
 Route::prefix('admin')->group(function() {
@@ -65,6 +78,10 @@ Route::prefix('partner')->group(function() {
             Route::put('/update/{id}', 'update')->name('field.update');
             Route::delete('/destroy/{id}','destroy')->name('field.destroy'); 
         });
+
+        Route::controller(TransactionController::class)->group(function() {
+            Route::get('/transaction', 'index')->name('transaction.index');
+        });
     });
 });
 
@@ -78,9 +95,7 @@ Route::prefix('partner')->group(function() {
 //     Route::delete('/destroy/{id}', 'destroy')->name('venue.destroy');
 // });
 
-Route::controller(TransactionController::class)->group(function() {
-    Route::get('/transaction', 'index');
-});
+
 
 
 

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Partner;
 use App\Models\Fieldtype;
 use App\Models\Timetable;
+use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -52,5 +53,10 @@ class Field extends Model
     public function partners()
     {
         return $this->belongsTo(Partner::class, 'partner_id', 'id');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'field_id', 'id');
     }
 }
