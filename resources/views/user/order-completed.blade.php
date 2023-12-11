@@ -3,23 +3,23 @@
 @section('title', 'Detail Lapangan')
 @section('content')
 
-@include('user.partials.jumbotronDashboard')
+    @include('user.partials.jumbotronDashboard')
 
-    
-    <div class="mx-auto max-w-screen-xl px-6 py-12">
+    <div class="mx-auto max-w-screen-lg px-6 py-12">
         @include('user.partials.breadcrumbCheckout')
         <div class="flex flex-col md:flex-row gap-6">
-            <div class="flex flex-col w-auto md:w-1/4 gap-6">
+            <div class="flex flex-col w-auto md:w-1/2 gap-6">
                 <div class="px-8 py-4 bg-white shadow rounded-lg">
                     <div class="py-2 border-b border-gray-300">
-                        <h1 class="text-xl font-bold">Status Order</h1>
+                        <h1 class="text-xl font-base">Status Order</h1>
                     </div>
                     <div class="py-2 flex justify-start">
                         <div class="w-1/3 block text-sm font-medium text-gray-900">Status</div>
                         <span class="block text-sm font-medium text-gray-900">:</span>
-                        <button type="button" class="block mx-4 px-2 py-1 bg-teal-600 hover:bg-teal-700 rounded-lg text-white text-xs font-bold">
+                        <button type="button"
+                            class="block mx-4 px-2 py-1 bg-teal-600 hover:bg-teal-700 rounded-lg text-white text-xs font-bold">
                             <a href="#">
-                                cek status</a>    
+                                cek status</a>
                         </button>
                     </div>
                 </div>
@@ -29,15 +29,16 @@
                     </div>
                     <div class="py-2">
                         <div class="p-20 bg-teal-600">Image</div>
-                        <img src="" alt="" >
+                        {{-- <img src="" alt=""> --}}
                     </div>
-                    
+
                 </div>
             </div>
-            <div class="px-12 py-12 w-auto md:w-1/2 bg-white shadow rounded-lg text-left">
+            <div class="px-12 py-12 w-auto md:w-full bg-white shadow rounded-lg text-left">
                 <div class="py-2 text-right">
                     <div class="flex justify-end">
-                        <img src="{{ url('build/assets/img/ingkenefutsal/ingkenefutsal-full.png') }}" alt="" class="w w-40">
+                        <img src="{{ url('build/assets/img/ingkenefutsal/ingkenefutsal-full.png') }}"
+                            class="w w-40">
                     </div>
                     <div>
                         <div class="py-1">
@@ -72,9 +73,9 @@
                 <div class="my-6 py-2 flex-row justify-start">
                     <div class="flex">
                         <div class="w-1/3  block text-sm font-medium text-gray-900">Rincian Pembayaran</div>
-                    <span class="block text-sm font-medium text-gray-900">:</span>
+                        <span class="block text-sm font-medium text-gray-900">:</span>
                     </div>
-                    
+
                     <div class="flex">
                         <div class="w-1/3 px-4 block text-sm font-normal">12:00-13:00</div>
                         <span class="block text-sm font-medium text-transparent">:</span>
@@ -104,7 +105,7 @@
                 <div class="mt-16 py-2">
                     <p class="t text-xs text-center">Jika ada pertanyaan, hubungi ingkenefutsal@gmail.com</p>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 

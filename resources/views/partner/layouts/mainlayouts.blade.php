@@ -15,7 +15,7 @@
     <link href="../../build/assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../../../build/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Popper -->
-    {{-- <script src="https://unpkg.com/@popperjs/core@2"></script> --}}
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <!-- Main Styling -->
     <link href="../../build/assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
 

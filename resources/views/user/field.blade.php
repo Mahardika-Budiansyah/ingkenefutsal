@@ -5,14 +5,14 @@
 
     @include('user.partials.jumbutronUser')
 
-    <div class="max-w-screen-xl mx-auto px-6 py-12">
+    <div class="max-w-screen-lg mx-auto px-6 py-12">
         <h1 class="font-semibold lg:text-4xl md:text-4xl sm:text-3xl mb-3">Semua Lapangan</h1>
         <div class="w-full mb-6">
             <form>
-                <div class="flex">
+                <div class="flex py-4">
                     <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only ">fieldtypes_id</label>
                     <button id="dropdown-button" data-dropdown-toggle="dropdown"
-                        class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-teal-100 border border-teal-300 rounded-s-lg hover:bg-teal-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
+                        class="flex-shrink-0 z-9 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-teal-600 border border-teal-600 rounded-s-lg hover:bg-teal-700"
                         type="button">Semua Tipe Lapangan <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,9 +31,9 @@
                     </div>  
                     <div class="relative w-full">
                         <input type="search" id="search-dropdown"
-                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-teal-500"
+                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-teal-600 focus:border-teal-600 "
                             placeholder="Search Mockups, Logos, Design Templates..." required>
-                        <button type="submit" class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-teal-700 rounded-e-lg border border-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300">
+                        <button type="submit" class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-teal-700 rounded-e-lg border border-teal-700 hover:bg-teal-800">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 20 20">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -45,22 +45,32 @@
                 </div>
             </form>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
             @foreach ($fields as $item)
                 <div class="flex max-w-xl flex-col justify-between">
-                    <div class="relative flex-shrink-0 h-48 w-full">
-                        <img class="absolute object-cover h-full w-full rounded-t-md"
-                            src="/build/assets/img/lapangan.jpg" />
-                    </div>
-                    <h3 class="mt-3 text-lg font-semibold leading-6 group-hover:text-deep-teal text-gray-800">
-                        {{ $item->name }}
-                    </h3>
-                    <p>Jalan tanjung depok, sleman</p>
-                    <div class="flex justify-between gap-2 mt-3">
-                        <span class="text-md font-bold">Mulai dari : <br> Rp. 30000</span>
-                        <span
-                            class="text-xs bg-teal-100 px-2 py-1 max-h-[22px] text-slate-900 rounded-lg flex items-center justify-center">{{ $item->fieldtypes->name }}</span>
-                    </div>
+                    <a href="{{ route('user.fieldShow', $item->slug) }}" class="bg-white shadow hover:shadow-xl rounded-lg">
+                        <div class="relative flex-shrink-0 h-52 w-full">
+                            <img class="absolute object-cover h-full w-full rounded-t-md"
+                                src="/build/assets/img/lapangan.jpg" />
+                        </div>
+                        <div class="px-6 pt-2 pb-6">
+                            <div class="flex justify-between gap-2 mt-3">
+                                <h3 class="text-lg font-semibold leading-6 group-hover:text-deep-teal text-gray-800">
+                                {{ $item->name }}
+                                </h3>
+                                <span class=" mt-1 text-xs bg-teal-700 px-2 pt-0.5 pb-1 max-h-[22px] text-white font-semibold rounded-md flex items-center justify-center">
+                                    {{ $item->fieldtypes->name }}
+                                </span>
+                                
+                            </div>
+                            <p>Jalan tanjung depok, sleman</p>
+                            <div class="flex justify-between gap-2 mt-3">
+                                <span class="text-md font-bold">Mulai dari: Rp. 30000</span>
+                                
+                            </div>
+                        </div>
+                        
+                    </a>
                 </div>
             @endforeach
         </div>

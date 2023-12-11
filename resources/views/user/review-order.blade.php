@@ -5,7 +5,7 @@
 
 @include('user.partials.jumbotronDashboard')
 
-    <div class="mx-auto max-w-screen-xl px-6 py-12">
+    <div class="mx-auto max-w-screen-lg px-6 py-12">
         <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-left text-gray-500 bg-transparent rounded-lg sm:text-base sm:p-4 sm:space-x-4">
             <li class="flex items-center text-teal-700">
                 <span class="flex items-center justify-center w-5 h-5 me-2 text-xs borderborder-teal-700 rounded-full shrink-0">
@@ -32,10 +32,12 @@
                 Order Selesai
             </li>
         </ol>
+        
+        
         <div class="flex flex-col sm:flex-row gap-4 text-center sm:text-left">
-            <div class="px-8 py-4 w-full sm:w-auto bg-white shadow rounded-lg basis-9/12">
+            <div class="px-8 py-4 w-full sm:w-auto bg-white shadow rounded-lg basis-8/12 sm:basis-6/12 md:basis-7/12 lg:basis-8/12">
                 <div class="py-2 border-b border-gray-300 flex justify-between">
-                    <h1 class="text-xl font-bold">Telaga Futsal</h1>
+                    <h1 class="text-xl font-bold">$fielName</h1>
                     <span class="text-xs font-normal mt-2 px-2 py-[4px] bg-teal-600 text-white rounded-md">Lapangan Sintetis</span>
                 </div>
                 <div class="py-2">
@@ -102,6 +104,37 @@
             </div>
             
         </div>
-    </div>
+
+        <div class="container">
+            <h1>Review Order</h1>
+            @if(isset($cartItems) && is_array($cartItems) && count($cartItems) > 0)
+            <ul>
+                @foreach($cartItems as $item)
+                    <li>
+                        @if(isset($item['fieldName']))
+                            <strong>Field Name:</strong> {{ $item['fieldName'] }}<br>
+                        @endif
+                        @if(isset($item['selectedDate']))
+                            <strong>Tanggal:</strong> {{ $item['selectedDate'] }}<br>
+                        @endif
+                        @if(isset($item['name']))
+                            <strong>Jam:</strong> {{ $item['name'] }}<br>
+                        @endif
+                        @if(isset($item->pivot['price']))
+                            <strong>Price:</strong> {{ $item->pivot['price'] }}<br>
+                        @endif
+                        <!-- Tampilkan detail item sesuai kebutuhan -->
+                    </li>
+                @endforeach
+            </ul>
+        @else
+            <p>Your cart is empty.</p>
+        @endif
 
 @endsection
+
+@isset($cartItems)
+    <script>
+        console.log('Received cartItems:', @json($cartItems));
+    </script>
+@endisset

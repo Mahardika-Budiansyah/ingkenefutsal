@@ -6,6 +6,7 @@ use App\Http\Controllers\FieldController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\UserFieldController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\PartnerProfileController;
 
@@ -33,9 +34,15 @@ Route::get('/user/dashboard', function() {
     return view('user.dashboard');
 })->name('user.dashboard');
 
-Route::get('/user/field', [FieldController::class, 'userIndex'])->name('user.field');
-Route::get('/user/detail', [FieldController::class, 'userShow'])->name('user.show');
-Route::get('/user/review-order', [TransactionController::class, 'userOrder'])->name('user.order');
+Route::get('/field', [UserFieldController::class, 'userIndex'])->name('user.field');
+Route::get('/field/{id}', [UserFieldController::class, 'userShow'])->name('user.fieldShow');
+
+// Route::get('/shopping-cart', [CartController::class, 'showCart'])->name('show.cart');
+// Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.to.cart');
+// Route::get('/remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('remove.from.cart');
+
+Route::post('/generate-order-token', [TransactionController::class, 'userOrder']);
+Route::get('/user/review-order', [TransactionController::class, 'reviewOrder'])->name('user.reviewOrder');
 Route::get('/user/payment', [TransactionController::class, 'userPayment'])->name('user.payment');
 Route::post('/user/upload-payment', [TransactionController::class, 'userUpload'])->name('user.upload');
 Route::get('/user/order-completed', [TransactionController::class, 'userCompleted'])->name('user.completed');
