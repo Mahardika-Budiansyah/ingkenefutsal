@@ -50,6 +50,7 @@
                 <div class="py-2 px-2 my-2 flex justify-between border-l-4 border-teal-600 bg-teal-100 text-base font-normal">
                     <input type="text" value="{{ $firstItem['fieldName'] }}" >          
                     <input type="text" value="{{ $firstItem['selectedDate'] }}">
+                    <input type="text" value="{{ $firstItem['selectedDate'] }}">
                     <div >
                         @if(isset($item['name']))
                         <input type="text" value="{{ $item['name'] }}">
