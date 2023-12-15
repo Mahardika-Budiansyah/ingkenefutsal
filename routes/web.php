@@ -42,9 +42,9 @@ Route::get('/field/{id}', [UserFieldController::class, 'userShow'])->name('user.
 // Route::get('/remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('remove.from.cart');
 
 Route::post('/generate-order-token', [TransactionController::class, 'userOrder']);
-Route::get('/user/review-order', [TransactionController::class, 'reviewOrder'])->name('user.reviewOrder');
-Route::get('/user/payment', [TransactionController::class, 'userPayment'])->name('user.payment');
-Route::post('/user/upload-payment', [TransactionController::class, 'userUpload'])->name('user.upload');
+Route::get('/checkout/review-order', [TransactionController::class, 'reviewOrder'])->name('user.reviewOrder');
+Route::get('/checkout/payment', [TransactionController::class, 'userPayment'])->name('user.payment');
+Route::post('/checkout/upload-payment', [TransactionController::class, 'userUpload'])->name('user.upload');
 Route::get('/user/order-completed', [TransactionController::class, 'userCompleted'])->name('user.completed');
 
 

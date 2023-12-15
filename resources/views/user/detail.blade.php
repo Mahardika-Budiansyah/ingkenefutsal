@@ -439,6 +439,7 @@
                     // Menambahkan ID lapangan ke dalam objek item
                     selectedTimetable.fieldId = '{{ $fields->id }}';
                     selectedTimetable.fieldName = '{{ $fields->name }}';
+                    selectedTimetable.fieldtypes = '{{ $fields->fieldtypes->name }}';
 
                     if (selectedTimetable && canAddToCart(selectedTimetable)) {
                         addToCart(selectedTimetable);
@@ -448,6 +449,7 @@
                 }
 
             });
+
     
             function findTimetableById(timetableId) {
                 return {!! json_encode($fields->timetables) !!}.find(function(timetable) {
@@ -490,19 +492,16 @@
         
     </script>
 
-    <script>
-        var timetableData = {!! json_encode($fields->timetables) !!};
+    {{-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var timetableData = {!! json_encode($fields->timetables) !!};
 
-        function findTimetableById(timetableId) {
-            return timetableData.find(function(timetable) {
-                return timetable.id == timetableId;
-            });
-        }
-
-        // ... (kode JavaScript lainnya)
-    </script>
-
-    {{-- <script src="{{ asset('build/assets/js/ingkenefutsal/detailField.js') }}" defer></script> --}}
-
+            function findTimetableById(timetableId) {
+                return timetableData.find(function(timetable) {
+                    return timetable.id == timetableId;
+                });
+            }
+        });
+    </script> --}}
 
 @endsection

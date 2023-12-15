@@ -221,7 +221,7 @@
                     .then(response => response.json())
                     .then(data => {
                         // Redirect to the review order page with the token in the URL
-                        window.location.href = '/user/review-order?token=' + encodeURIComponent(data.token);
+                        window.location.href = '/checkout/review-order?token=' + encodeURIComponent(data.token);
                     })
                     .catch(error => {
                         console.error('Error generating order token:', error);

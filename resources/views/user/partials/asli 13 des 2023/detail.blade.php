@@ -44,16 +44,16 @@
             <div class="mb-4 sm:mb-0 basis-9/12">
                 <input type="text" name="field_id" hidden>
                 <div class="py-2">
-                    <h1 class="text-3xl font-bold">{{ $field->name }}</h1>
+                    <h1 class="text-3xl font-bold">{{ $fields->name }}</h1>
                 </div>
                 <div class="py-2">
-                    <span class="text-xs font-normal px-2 py-[4px] bg-teal-600 text-white rounded-md">{{ $field->fieldtypes->name }}</span>
+                    <span class="text-xs font-normal px-2 py-[4px] bg-teal-600 text-white rounded-md">{{ $fields->fieldtypes->name }}</span>
                 </div>
                 <div class="py-2 border-b-2 border-gray-300">
                     <p class="text-base font-normal">Alamat</p>
                 </div>
                 <div class="py-2">
-                    <p class="text-base font-normal">{{ $field->description }}</p>
+                    <p class="text-base font-normal">{{ $fields->description }}</p>
                 </div>
             </div>
             <div class="flex-grow">
@@ -87,7 +87,7 @@
 
         <div class="bg-white p-4 rounded-lg shadow-sm"> 
             <div class="mx-2 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 text-center text-xs">
-                @foreach ($field->timetables as $item)
+                @foreach ($fields->timetables as $item)
                 <div class="py-2 border border-gray-100 rounded-md hover:border-gray-200">
                     <p class="font-bold">{{ $item->name }}</p>
                     <p> @currency($item->pivot->price)</p>

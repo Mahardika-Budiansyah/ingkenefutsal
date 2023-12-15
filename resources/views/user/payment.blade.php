@@ -5,7 +5,7 @@
 
 @include('user.partials.jumbotronDashboard')
 
-    <div class="mx-auto max-w-screen-xl px-6 py-12">
+    <div class="mx-auto max-w-screen-lg px-6 py-12">
         @include('user.partials.breadcrumbCheckout')
         <form class="space-y-2" action="" method="POST" enctype="multipart/form-data">
         @csrf

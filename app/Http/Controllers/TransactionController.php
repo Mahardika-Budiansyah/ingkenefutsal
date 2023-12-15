@@ -64,9 +64,10 @@ class TransactionController extends Controller
     public function userPayment()
     {
         // Mengambil semua transaksi dengan informasi partner terkait
-        $transactions = Transaction::with('field.partners', 'statues')->get();
+        // $transactions = Transaction::with('field.partners', 'statues')->get();
 
-        return view('user.payment', compact('transactions'));
+        // return view('user.payment', compact('transactions'));
+        return view('user.payment');
     }
 
     public function userCompleted() {
