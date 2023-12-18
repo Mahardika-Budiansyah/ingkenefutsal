@@ -65,7 +65,7 @@ Route::prefix('partner')->group(function() {
     Route::post('/register/store', [PartnerController::class, 'store'])->name('partner.register.store');
     
 
-    Route::middleware(['partner'])->group(function() {
+    Route::middleware(['auth:partner'])->group(function() {
         Route::controller(PartnerController::class)->group(function() {
             Route::get('/dashboard', 'dashboard')->name('partner.dashboard');
             Route::get('/logout', 'logout')->name('partner.logout');
@@ -73,7 +73,7 @@ Route::prefix('partner')->group(function() {
 
         Route::controller(PartnerProfileController::class)->group(function() {
             Route::get('/edit', 'edit')->name('partner.edit');
-            Route::patch('/edit/update', 'update')->name('partner.update');
+            Route::put('/edit/update', 'update')->name('partner.update');
         });
 
         Route::controller(FieldController::class)->group(function() {	

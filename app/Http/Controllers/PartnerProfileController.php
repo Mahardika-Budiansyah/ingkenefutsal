@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\PartnerProfileUpdateRequest;
 
 class PartnerProfileController extends Controller
@@ -19,28 +20,20 @@ class PartnerProfileController extends Controller
         ]);
     }
 
-    public function update(PartnerProfileUpdateRequest $request): RedirectResponse
-    {
-        // $request->user()->fill($request->validated());
+    public function update(PartnerProfileUpdateRequest $request): RedirectResponse {
 
-        // if ($request->user()->isDirty('email')) {
-        //     $request->user()->email_verified_at = null;
-        // }
-
-        // $request->user()->save();
-
-        // return Redirect::route('partner.edit')->with('status', 'profile telah diperbarui');
-
-        $partnerUser = $request->guard('partner')->user();
+        $partnerUser = auth('partner')->user();
 
         $partnerUser->fill($request->validated());
-    
+
         if ($partnerUser->isDirty('email')) {
             $partnerUser->email_verified_at = null;
         }
-    
+
         $partnerUser->save();
-    
-        return redirect()->route('partner.edit')->with('status', 'Profile telah diperbarui');
+
+        Alert::toast('Profil Partner telah berhasil diperbarui!','success');
+        return redirect()->route('partner.edit');
     }
+    
 }

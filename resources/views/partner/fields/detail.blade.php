@@ -6,10 +6,10 @@
 
     <div class="flex flex-wrap -mx-3">
         <div class="flex-none w-full max-w-full px-3">
-            <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+            <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
                 <div class="flex flex-wrap justify-between">
                     <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                        <p class="uppercase font-semibold dark:text-white">Data {{ $field->name }}</p>
+                        <p class="uppercase font-semibold">Data {{ $field->name }}</p>
                     </div>
                 </div>
                 <div class="px-6 py-4">
@@ -113,8 +113,8 @@
                             </span>
                         </div>      
                     </div>
-                    <div class="flex justify-end items-center pt-4 p-0 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                    <div class="flex justify-start items-center pt-4 p-0 space-x-2 border-t border-gray-200 rounded-b">
+                        <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
                             <a href="{{ route('field.index') }}">
                                 Back
                             </a>

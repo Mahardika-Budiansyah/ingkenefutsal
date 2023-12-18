@@ -25,8 +25,9 @@
 
 <body
     class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
-    <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
-
+    <div class="absolute w-full min-h-75" style="background-image: url('../../build/assets/img/jumbotronUser.jpg'); background-size: cover; background-position: 50% 75%;"></div>
+    
+    @include('sweetalert::alert')
     <!-- Sidenav Start -->
     @includeIf('partner.layouts.partials.sidenav', ['activePage' => $activePage ?? null])
     <!-- Sidenav End -->
@@ -50,6 +51,7 @@
     <!-- plugin for scrollbar  -->
     <script src="../../build/assets/js/plugins/perfect-scrollbar.min.js" async></script>
     <!-- main script file  -->
+    <script src="public/assets/js/jquery.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../../build/assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
     <script src="../../../../node_modules/flowbite/dist/flowbite.min.js"></script>
@@ -63,6 +65,22 @@
                 $('.timetable-price[data-id="' + id + '"]').val(null)
             })
         });
+    </script>
+    
+    <script>
+        function formatCurrency(input) {
+            // Remove non-numeric characters
+            let value = input.value.replace(/[^\d]/g, '');
+    
+            // Format the number with commas
+            value = new Intl.NumberFormat('id-ID').format(value);
+    
+            // Add the 'Rp.' prefix
+            value = value;
+    
+            // Update the input value
+            input.value = value;
+        }
     </script>
 
     {{-- <script>

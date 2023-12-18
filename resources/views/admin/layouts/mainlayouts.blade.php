@@ -48,7 +48,7 @@
     <script src="../build/assets/js/plugins/perfect-scrollbar.min.js" async></script>
     <!-- main script file  -->
     <script src="../build/assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../build/assets/js/jquery.min.js" async></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 

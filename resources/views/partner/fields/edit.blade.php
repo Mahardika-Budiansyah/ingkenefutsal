@@ -71,7 +71,7 @@
                                         </div>
                                         @endforeach                                   
                                     </div>
-                                </div>     
+                                </div>   
                             </div>
                             <!-- Modal footer -->
                             <div class="flex justify-end items-center pt-4 p-0 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">

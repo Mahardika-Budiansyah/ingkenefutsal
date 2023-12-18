@@ -8,7 +8,7 @@
             document.write(new Date().getFullYear() + ",");
             </script>
             made
-            <a href="" class="font-semibold text-slate-700 dark:text-white" target="_blank">Ingkenefutsal Web Magelang</a>
+            <a href="{{ Route('homepage') }}" class="font-semibold text-slate-700 dark:text-white" target="_blank">Ingkenefutsal Web Magelang</a>
         </div>
         </div>
     </div>

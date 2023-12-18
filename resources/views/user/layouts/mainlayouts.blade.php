@@ -33,6 +33,7 @@
 <body
     class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 leading-default bg-gray-50 text-slate-500">
 
+    @include('sweetalert::alert')
     @include('user.layouts.partials.navbar')
 
     @yield('content')
@@ -276,8 +277,8 @@
     <!-- plugin for scrollbar  -->
     <script src="../build/assets/js/plugins/perfect-scrollbar.min.js" async></script>
     <!-- main script file  -->
+    <script src="../../build/assets/js/jquery.min.js" async></script>
     <script src="../build/assets/js/argon-dashboard-tailwind.js?v=1.0.1" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     {{-- <script src="node_modules/flowbite/dist/flowbite.min.js"></script> --}}
 
 

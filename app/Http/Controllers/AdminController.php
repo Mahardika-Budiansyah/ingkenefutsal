@@ -7,6 +7,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -21,16 +22,18 @@ class AdminController extends Controller
     public function login(Request $request) {
         $check = $request->all();
         if(Auth::guard('admin')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
-            return redirect()->route('admin.dashboard')->with('error', 'Admin Login Successfully');
+            Alert::toast('Login Admin Berhasil!','success');
+            return redirect()->route('admin.dashboard');
         } else {
-            return back()->with('error', 'Invalid Email Or Password!');
+            Alert::toast('Login Admin Gagal!','error');
+            return back();
         }
         
     }
 
     public function logout() {
         Auth::guard('admin')->logout();
-        return redirect()->route('admin.login_from')->with('error', 'Admin Logout Successfully');
+        return redirect()->route('admin.login_from');
     }
 
     public function register() {
@@ -46,6 +49,7 @@ class AdminController extends Controller
             'updated_at' => Carbon::now(), 
         ]);
 
+        Alert::toast('Pendaftaran Admin Berhasil!','success');
         return redirect()->route('admin.login_from')->with('error', 'Admin Created Successfully');
     }
 }

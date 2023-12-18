@@ -4,11 +4,11 @@
             <!-- breadcrumb -->
             <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
             <li class="text-sm leading-normal">
-                <a class="text-white opacity-50" href="javascript:;">Pages</a>
+                <a class="text-gray-400 sm:text-white opacity-50" href="javascript:;">Pages</a>
             </li>
-            <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Dashboard</li>
+            <li class="text-sm pl-2 capitalize leading-normal text-gray-600 sm:text-white before:float-left before:pr-2 before:text-gray-600 sm:before:text-white before:content-['/']" aria-current="page">Dashboard</li>
             </ol>
-            <h6 class="mb-0 font-bold text-white capitalize">Dashboard</h6>
+            <h6 class="mb-0 font-bold text-gray-600 sm:text-white capitalize">Dashboard</h6>
         </nav>
 
         <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -17,7 +17,7 @@
                     <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
                     <i class="fas fa-search"></i>
                     </span>
-                    <input type="text" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 dark:bg-slate-850 dark:text-white bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Type here..." />
+                    <input type="text" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Type here..." />
                 </div>
             </div>
             <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
@@ -25,21 +25,21 @@
 
                 <li class="relative flex items-center pr-2">
                     <p class="hidden transform-dropdown-show"></p>
-                    <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" dropdown-trigger aria-expanded="false">
+                    <a href="javascript:;" class="block p-0 text-sm text-gray-500 sm:text-white transition-all ease-nav-brand" dropdown-trigger aria-expanded="false">
                     <i class="cursor-pointer fa fa-bell"></i>
                     </a>
 
-                    <ul dropdown-menu class="text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-8 before:text-5.5 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent dark:shadow-dark-xl dark:bg-slate-850 bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer">
+                    <ul dropdown-menu class="text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-8 before:text-5.5 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer">
                         <!-- add show class on dropdown open js -->
                         <li class="relative mb-2">
-                            <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
+                            <a class="ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
                             <div class="flex py-1">
                                 <div class="my-auto">
                                 <img src="../assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
                                 </div>
                                 <div class="flex flex-col justify-center">
-                                <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New message</span> from Laur</h6>
-                                <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                                <h6 class="mb-1 text-sm font-normal leading-normal"><span class="font-semibold">New message</span> from Laur</h6>
+                                <p class="mb-0 text-xs leading-tight text-slate-400">
                                     <i class="mr-1 fa fa-clock"></i>
                                     13 minutes ago
                                 </p>
@@ -49,14 +49,14 @@
                         </li>
 
                         <li class="relative mb-2">
-                            <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
+                            <a class="ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
                             <div class="flex py-1">
                                 <div class="my-auto">
-                                <img src="../assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 h-9 w-9 max-w-none rounded-xl" />
+                                <img src="../assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 h-9 w-9 max-w-none rounded-xl" />
                                 </div>
                                 <div class="flex flex-col justify-center">
-                                <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New album</span> by Travis Scott</h6>
-                                <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                                <h6 class="mb-1 text-sm font-normal leading-normal"><span class="font-semibold">New album</span> by Travis Scott</h6>
+                                <p class="mb-0 text-xs leading-tight text-slate-400">
                                     <i class="mr-1 fa fa-clock"></i>
                                     1 day
                                 </p>
@@ -66,7 +66,7 @@
                         </li>
 
                         <li class="relative">
-                            <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
+                            <a class="ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
                             <div class="flex py-1">
                                 <div class="inline-flex items-center justify-center my-auto mr-4 text-sm text-white transition-all duration-200 ease-nav-brand bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xl">
                                 <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -84,8 +84,8 @@
                                 </svg>
                                 </div>
                                 <div class="flex flex-col justify-center">
-                                <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white">Payment successfully completed</h6>
-                                <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
+                                <h6 class="mb-1 text-sm font-normal leading-normal">Payment successfully completed</h6>
+                                <p class="mb-0 text-xs leading-tight text-slate-400">
                                     <i class="mr-1 fa fa-clock"></i>
                                     2 days
                                 </p>
@@ -97,7 +97,7 @@
                 </li>
                 
                 <li class="flex items-center">
-                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-transparent font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-gray-600 sm:text-white bg-transparent font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex items-center" type="button">
                         {{ Auth::guard('partner')->user()->name }}
                         <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -105,23 +105,23 @@
                     </button>
                     
                     <!-- Dropdown menu -->
-                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                        <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownDefaultButton">
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-teal-100 hover:font-medium">Profile</a>
                             </li>
                             <li>
-                                <a href="{{ route('partner.logout') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                                <a href="{{ route('partner.logout') }}" class="block px-4 py-2 hover:bg-teal-100 hover:font-medium">Logout</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="flex items-center pl-4 xl:hidden">
+                <li class="flex items-center pl-2 xl:hidden">
                     <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
                     <div class="w-4.5 overflow-hidden">
-                        <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                        <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                        <i class="ease relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                        <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-gray-500 transition-all"></i>
+                        <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-gray-500 transition-all"></i>
+                        <i class="ease relative block h-0.5 rounded-sm bg-gray-500 transition-all"></i>
                     </div>
                     </a>
                 </li>

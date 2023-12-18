@@ -7,6 +7,7 @@ use App\Models\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PartnerController extends Controller
 {
@@ -23,16 +24,18 @@ class PartnerController extends Controller
     public function login(Request $request) {
         $check = $request->all();
         if(Auth::guard('partner')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
-            return redirect()->route('partner.dashboard')->with('error', 'Partner Login Successfully');
+            Alert::toast('Login Partner Berhasil!','success');
+            return redirect()->route('partner.dashboard');         
         } else {
-            return back()->with('error', 'Invalid Email Or Password!');
+            Alert::toast('Login Partner Gagal!','error');
+            return back();
         }
         
     }
 
     public function logout() {
         Auth::guard('partner')->logout();
-        return redirect()->route('partner.login_from')->with('error', 'Partner Logout Successfully');
+        return redirect()->route('partner.login_from');
     }
 
     public function register() {
@@ -48,7 +51,8 @@ class PartnerController extends Controller
             'updated_at' => Carbon::now(), 
         ]);
 
-        return redirect()->route('partner.login_from')->with('error', 'Partner Created Successfully');
+        Alert::toast('Pendaftaran Partner Berhasil!','success');
+        return redirect()->route('partner.login_from');
     }
 
 }
